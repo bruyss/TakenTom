@@ -32,7 +32,7 @@ model = 'Model_2024_ss_pump'
 model = 'Taak'
 
 # name of observed heads file (the one from Ufora)
-csv = 'steady_state_calibration'
+csv = 'steady_state_calibration_RAW'
 
 # open the simulation results
 sim_out = flopy.utils.observationfile.Mf6Obs(os.path.join(directory_S, '{}.ob_gw_out_head.csv'.format(model)), isBinary=False)
@@ -43,6 +43,7 @@ sim_df.columns = ['natural', 'pumping']
 sim_df = sim_df.iloc[1:]
 
 index_labels = ["P1", "Pz10", "Pz11", "Pz12", "Pz2", "Pz3", "Pz4", "Pz5", "Pz6", "Pz7", "Pz8", "Pz9"] #CHANGE THIS SO IT MATCHES THE ORDER OF YOUR SIMULATED FILE
+index_labels = ["P1", "Pz2", "Pz3", "Pz4", "Pz5", "Pz6", "Pz7", "Pz8", "Pz9", "Pz10", "Pz11", "Pz12"] #CHANGE THIS SO IT MATCHES THE ORDER OF YOUR SIMULATED FILE
 sim_df.index=index_labels
 
 #open the file with the observed heads
@@ -86,7 +87,7 @@ plt.ylabel('Simulated Head (m)', fontsize=14)
 plt.title('calibration {} conditions: {}={}'.format(condition, error, round(error_value,4)), fontsize=20)
 fig.tight_layout()
 
-
+plt.show()
 
 #%%
 
