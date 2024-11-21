@@ -6,7 +6,7 @@ INVOER = [("Toblerone", "Bern"), ("Coca-Cola", "Ocala")]
 def surround_char(s: str, i: int, c1: str, c2: str):
     """
     Surround the character at index i of string s with the characters c1 & c2
-    Example: surrounc("Hello", 1, "(", ")") -> H(e)llo
+    Example: surround_char("Hello", 1, "(", ")") -> H(e)llo
 
     Args:
         s (str): Input string
@@ -37,12 +37,12 @@ def word_find(word: str, search: str) -> str:
     return ret
 
 
-
 def main():
     for t in INVOER:
         merknaam, stad = t
         ans = word_find(merknaam, stad)
         print(ans)
+
 
 if __name__ == "__main__":
     main()
